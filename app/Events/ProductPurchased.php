@@ -14,20 +14,23 @@ class ProductPurchased
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $name;
+
     /**
      * Create a new event instance.
      *
-     * @return void
+     * @param $name
      */
-    public function __construct()
+    public function __construct($name)
     {
         //
+        $this->name = $name;
     }
 
     /**
      * Get the channels the event should broadcast on.
      *
-     * @return \Illuminate\Broadcasting\Channel|array
+     * @return Channel|array
      */
     public function broadcastOn()
     {
